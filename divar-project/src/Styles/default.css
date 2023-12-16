@@ -1,0 +1,39 @@
+html {
+  font-size: 62.5%;
+}
+* {
+  outline: none;
+  color: var(--text-color);
+}
+body {
+  font-family: "iransans-regular" !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+button {
+  background-color: transparent;
+  border: none;
+}
+a {
+  color: var(--text-color);
+  text-decoration: none;
+  transition: var(--transition);
+}
+i {
+  transition: var(--transition);
+}
+a:hover {
+  color: var(--black-color);
+}
+input {
+  border: none;
+}
+button {
+  padding: 0;
+  margin: 0;
+}
+.bi {
+  display: flex;
+  align-items: center;
+}

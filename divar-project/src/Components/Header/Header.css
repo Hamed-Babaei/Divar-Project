@@ -1,0 +1,119 @@
+.header {
+    padding: 0.8rem 0;
+    background-color: var(--white-color);
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 2px 0px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    z-index: 1;
+}
+.header__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.header__right {
+    display: flex;
+    align-items: center;
+}
+.header__logo-img {
+    width: 4.8rem;
+    height: 4.8rem;
+}
+.header__country {
+    display: flex;
+    align-items: center;
+    font-size: var(--font-size-md);
+    font-family: "iransans-bold";
+    margin: 0 2rem;
+    transition: var(--transition);
+    padding: 1rem 1.3rem;
+    border-radius: 0.3rem;
+}
+.header__country *,
+.header__category-btn * {
+    transition: var(--transition);
+}
+.header__country:hover,
+.header__category-btn:hover {
+    background-color: rgba(0, 0, 0, 0.04);
+}
+.header__country:hover *,
+.header__category-btn:hover * {
+    color: var(--black-color);
+}
+.header__country-icon {
+    font-size: 1.6rem;
+}
+.header__country-title {
+    margin-right: 0.8rem;
+}
+.header__left {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.header__left-link {
+    display: flex;
+    align-items: center;
+    font-size: var(--font-size-sm);
+    margin: 0 1.5rem;
+    font-family: "iransans-medium";
+    padding: 1rem 1.3rem;
+    border-radius: 0.3rem;
+}
+.header__left-link:hover {
+    background-color: rgba(0, 0, 0, 0.04);
+}
+.header__left-link:hover .header__left-icon {
+    color: var(--black-color);
+}
+/* Drop Down */
+.header__left-dropdown {
+    position: absolute;
+    top: 4rem;
+    background-color: var(--white-color);
+    box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.08), 0 -8px 32px -4px rgba(0, 0, 0, 0.04),
+        0 16px 24px -6px rgba(0, 0, 0, 0.04);
+    border-radius: 0.3rem;
+    width: 22rem;
+    visibility: hidden;
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.header__left-dropdown-link {
+    display: flex;
+    padding: 1.5rem;
+    border-bottom: var(--border);
+    align-items: center;
+    font-size: var(--font-size-sm);
+    color: var(--black-color);
+}
+.header__left-dropdown-link:hover {
+    background-color: rgba(0, 0, 0, 0.04);
+}
+.header__left-dropdown-icon {
+    color: var(--black-color);
+    margin-left: 1rem;
+    font-size: var(--font-size-md);
+}
+/* End Drop Down */
+.header__left-icon.bi-person {
+    font-size: var(--font-size-lg);
+    margin-left: 0.7rem;
+}
+.header__left-icon.bi-chat {
+    font-size: var(--font-size-md);
+    margin-left: 0.7rem;
+}
+.header__left-btn {
+    font-size: var(--font-size-md);
+    font-family: "iransans-bold";
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    border-radius: 0.3rem;
+    padding: 0.8rem 1.3rem;
+}
