@@ -65,91 +65,25 @@ export default function Index() {
         <div className="main__cities">
           <span className="main__cities-title">شهر های پر بازدید</span>
           <ul className="main__cities-list">
-            <div className="row">
-              <div className="col-2 d-flex justify-content-center">
-                <li className="main__cities-item">
-                  <a className="main__cities-link" href="#">
-                    تهران
-                  </a>
-                </li>
-              </div>
-              <div className="col-2 d-flex justify-content-center">
-                <li className="main__cities-item">
-                  <a className="main__cities-link" href="#">
-                    تهران
-                  </a>
-                </li>
-              </div>
-              <div className="col-2 d-flex justify-content-center">
-                <li className="main__cities-item">
-                  <a className="main__cities-link" href="#">
-                    تهران
-                  </a>
-                </li>
-              </div>
-              <div className="col-2 d-flex justify-content-center">
-                <li className="main__cities-item">
-                  <a className="main__cities-link" href="#">
-                    تهران
-                  </a>
-                </li>
-              </div>
-              <div className="col-2 d-flex justify-content-center">
-                <li className="main__cities-item">
-                  <a className="main__cities-link" href="#">
-                    تهران
-                  </a>
-                </li>
-              </div>
-              <div className="col-2 d-flex justify-content-center">
-                <li className="main__cities-item">
-                  <a className="main__cities-link" href="#">
-                    تهران
-                  </a>
-                </li>
-              </div>
-              <div className="col-2 d-flex justify-content-center">
-                <li className="main__cities-item">
-                  <a className="main__cities-link" href="#">
-                    تهران
-                  </a>
-                </li>
-              </div>
-              <div className="col-2 d-flex justify-content-center">
-                <li className="main__cities-item">
-                  <a className="main__cities-link" href="#">
-                    تهران
-                  </a>
-                </li>
-              </div>
-              <div className="col-2 d-flex justify-content-center">
-                <li className="main__cities-item">
-                  <a className="main__cities-link" href="#">
-                    تهران
-                  </a>
-                </li>
-              </div>
-              <div className="col-2 d-flex justify-content-center">
-                <li className="main__cities-item">
-                  <a className="main__cities-link" href="#">
-                    تهران
-                  </a>
-                </li>
-              </div>
-              <div className="col-2 d-flex justify-content-center">
-                <li className="main__cities-item">
-                  <a className="main__cities-link" href="#">
-                    تهران
-                  </a>
-                </li>
-              </div>
-              <div className="col-2 d-flex justify-content-center">
-                <li className="main__cities-item">
-                  <a className="main__cities-link" href="#">
-                    تهران
-                  </a>
-                </li>
-              </div>
+            <div className="row-wrapper">
+              <a className="row-item">تهران</a>
+
+              <a className="row-item">تهران</a>
+
+              <a className="row-item">تهران</a>
+              <a className="row-item">تهران</a>
+
+              <a className="row-item">تهران</a>
+
+              <a className="row-item">تهران</a>
+
+              <a className="row-item">تهران</a>
+
+              <a className="row-item">تهران</a>
+
+              <a className="row-item">تهران</a>
+
+              <a className="row-item">تهران</a>
             </div>
           </ul>
         </div>

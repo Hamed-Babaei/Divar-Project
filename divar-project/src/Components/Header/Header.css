@@ -1,3 +1,4 @@
+
 .header {
     padding: 0.8rem 0;
     background-color: var(--white-color);
@@ -13,6 +14,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 0 16px;
 }
 .header__right {
     display: flex;
@@ -21,6 +23,7 @@
 .header__logo-img {
     width: 4.8rem;
     height: 4.8rem;
+    margin-left: 8px;
 }
 .header__country {
     display: flex;
@@ -30,6 +33,7 @@
     margin: 0 2rem;
     transition: var(--transition);
     padding: 1rem 1.3rem;
+    margin-right: 0 !important;
     border-radius: 0.3rem;
 }
 .header__country *,
@@ -50,15 +54,208 @@
 .header__country-title {
     margin-right: 0.8rem;
 }
-.header__left {
+.header__category {
+    position: relative;
+    margin: 0 0 0 2rem;
+}
+.header__category-btn {
+    display: flex;
+    align-items: center;
+    font-family: "iransans-bold";
+    transition: var(--transition);
+    padding: 1rem 1.3rem;
+    border-radius: 0.3rem;
+}
+.header__category-btn-title {
+    font-size: var(--font-size-md);
+    margin-left: 0.5rem;
+}
+.header__category-btn-icon {
+    font-size: 1.3rem;
+    padding-right: 1rem;
+}
+.header-hr {
+    margin: 0 8px;
+    background-color: rgb(3, 3, 3);
+    width: 1px;
+    height: 2.8rem !important;
+    display: inline-block;
+    transform: rotate(90deg) ;
+rotate: 90deg;
+}
+/* Header Category Menu */
+.header__category-menu{
+    position: absolute;
+    background-color: var(--white-color);
+    width: 20rem;
+    box-shadow: 0 1px 6px 0 rgba(0, 0 ,0 , .08), 0 -8px 32px -4px rgba(0, 0 ,0 , .04), 0 16px 24px -6px rgba(0 ,0 ,0, .04);
+    border-radius: 0 .5rem .5rem 0;
+    z-index: 100;
+    top: 4.5rem;
+    height: 50rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+}
+.header__category-menu-right{
+    padding: 2.5rem 2rem;
+}
+.header__category-menu-btn{
+    display: flex;
+    align-items: center;
+    font-size: var(--font-size-sm);
+    border: var(--border);
+    padding: .7rem;
+    border-radius: .3rem;
+}
+.header__category-menu-btn:hover {
+    background-color: rgba(0 ,0 ,0, .04);
+}
+.header__category-menu-btn-icon{
+    margin-left: .5rem;
+}
+.haeder__category-menu-list{
+    margin: 1rem 0;
+    position: relative;
+}
+.header__category-menu-item:hover .header__category-dropdown {
+    visibility: visible;
+    opacity: 1;
+}
+.header__category-menu-link{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: var(--font-size-sm);
+    padding: 1rem .5rem;
+    border-radius: .3rem;
+}
+.header__category-menu-link:hover {
+    background-color: rgba(0 ,0 ,0, .06);
+}
+.header__category-menu-link-right {
+    display: flex;
+    align-items: center;
+}
+.header__category-menu-icon{
+    margin-left: .5rem;
+}
+.header__category-menu-arrow-icon {
+    font-size: 1rem;
+}
+.header__category-dropdown{
+    position: absolute;
+    top: -6.3rem;
+    left: -92rem;
+    background-color: var(--white-color);
+    border-radius: .5rem 0 0 .5rem;
+    width: 90rem;
+    height: 50rem;
+    border-right: var(--border);
+    padding: 2rem;
+    box-shadow: 0 1px 6px 0 rgba(0, 0 ,0 , .08), 0 -8px 32px -4px rgba(0, 0 ,0 , .04), 0 16px 24px -6px rgba(0 ,0 ,0, .04);
+    transition: var(--transition);
+    visibility: hidden;
+    opacity: 0;
+}
+.header__category-dropdown-list{
+    margin: 2rem 0;
+}
+.header__category-dropdown-title{
+    font-size: var(--font-size-sm);
+    color: var(--black-color);
+    font-family: "iransans-medium";
+    margin-bottom: 1rem;
+    display: block;
+}
+.header__category-dropdown-title:hover {
+    color: var(--primary-color);
+}
+.header__category-dropdown-item{
+
+}
+.header__category-dropdown-link{
+    display: block;
+    font-size: var(--font-size-sm);
+    padding: .5rem 0;
+}
+.header__category-dropdown-link:hover {
+    color: var(--primary-color);
+}
+/* End Header Category Menu */
+.header__searchbar {
     display: flex;
     align-items: center;
     position: relative;
 }
+
+/* Searchbar Dropdown */
+.header__searchbar-dropdown {
+    position: absolute;
+    top: 3.8rem;
+    width: 100%;
+    background-color: var(--white-color);
+    border-top: var(--border);
+    border-radius: 0 0 0.3rem 0.3rem;
+    padding: 2rem 0;
+    opacity: 0;
+    visibility: hidden;
+}
+.header__searchbar-dropdown-title {
+    display: block;
+    font-size: var(--font-size-md);
+    margin: 1rem 0;
+    padding: 0 1.5rem;
+}
+.header__searchbar-dropdown-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 0.8rem;
+}
+.header__searchbar-dropdown-link {
+    display: block;
+    font-size: var(--font-size-sm);
+    padding: 0.7rem 1rem;
+    margin: 0.5rem 0.7rem;
+    border: var(--border);
+    border-radius: 2rem;
+}
+.header__searchbar-dropdown-link:hover {
+    background-color: rgba(0, 0, 0, 0.04);
+}
+/* End Searchbar Dropdown */
+.header__form {
+    height: 3.8rem;
+    width: 40rem;
+}
+.header__form-input {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.04);
+    border-radius: 0.3rem;
+    color: var(--black-color) !important;
+    padding: 0.5rem 3.5rem 0.5rem 1rem;
+    font-size: 14px !important;
+}
+.header__searchbar-icon {
+    font-size: var(--font-size-md);
+    position: absolute;
+    right: 1rem;
+}
+.header__searchbar-icon:hover {
+    color: var(--black-color) !important;
+}
+.header__left {
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: 51px;
+}
 .header__left-link {
     display: flex;
     align-items: center;
-    font-size: var(--font-size-sm);
+    font-size: var(--font-size-sm) !important;
+    font-weight: 700 !important;
     margin: 0 1.5rem;
     font-family: "iransans-medium";
     padding: 1rem 1.3rem;
@@ -115,5 +312,6 @@
     background-color: var(--primary-color);
     color: var(--white-color);
     border-radius: 0.3rem;
-    padding: 0.8rem 1.3rem;
+    padding: 1rem 1.8rem !important;
+    height: 78%;
 }

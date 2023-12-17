@@ -1,9 +1,15 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
 
+
+
 .wrapper {
   width: 566px;
-  min-height:100vh; 
-  margin: auto;
+  /* min-height:100vh;  */
+  /* margin: auto; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 
@@ -12,7 +18,9 @@
   display: flex !important;
   flex-direction: column !important;
   align-items: center !important;
+  justify-content: center;
   padding: 0 0 !important;
+  width: 100% !important;
 }
 .header__logo {
   width: 64px;
@@ -128,11 +136,32 @@
 .search-result-cities li:hover {
   background-color: #eee;
 }
+.col-2 {
+  padding: 0!important;
+}
+.row-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  height: 166px;
+}
+.row-item {
+  width: 20%;
+    box-sizing: border-box;
+    text-align: center;
+    display: inline-block;
+  font-size: 1.6rem;
+  font-family: "iransans-bold";
+  /* color: var(--black-color); */
+  padding: 32px 0 16px 0;
+  font-weight: 500;
+}
 
 /* ===================================End Main Style================================ */
 
 /* ====================================Footer=================================== */
 .footer {
+  width: 100%;
   margin: 0 !important;
   padding: 2rem 0 0 0 !important;
 }
