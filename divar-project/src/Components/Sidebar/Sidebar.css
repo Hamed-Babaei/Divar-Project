@@ -31,6 +31,8 @@
     padding: 1rem 0;
     font-size: var(--font-size-md);
     font-family: "iransans-medium";
+    height: 40px;
+    align-items: center;
 }
 .sidebar__category-link:hover .sidebar__category-icon {
     color: var(--black-color);
