@@ -1,22 +1,22 @@
 import routes from "./router/routes";
 import { useRoutes } from "react-router-dom";
-// import HomePage from "./pages/HomePage";
-// import DashboardPage from "./pages/DashboardPage";
-// import AuthPage from "./pages/AuthPage";
-// import AdminPage from "./pages/AdminPage";
-// import PageNotFound from "./pages/404";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import defaultOptions from "./configs/reactQuery";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
-// const routes = [
-//   { path: "/", element: <HomePage /> },
-//   { path: "/dashboard", element: <DashboardPage /> },
-//   { path: "/auth", element: <AuthPage /> },
-//   { path: "/admin", element: <AdminPage /> },
-//   { path: "*", element: <PageNotFound /> },
-// ];
+const queryClient = new QueryClient({ defaultOptions });
 
 function App() {
   const router = useRoutes(routes);
-  return <>{router}</>;
+  return (
+    <>
+      <QueryClientProvider client={queryClient}>
+        {router}
+
+        <ReactQueryDevtools />
+      </QueryClientProvider>
+    </>
+  );
 }
 
 export default App;
