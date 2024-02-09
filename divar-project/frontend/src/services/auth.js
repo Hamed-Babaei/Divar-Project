@@ -1,4 +1,4 @@
-import api from "../configs/api";
+import api from "configs/api";
 const sendOtp = async (mobile) => {
   try {
     const response = await api.post("auth/send-otp", { mobile });

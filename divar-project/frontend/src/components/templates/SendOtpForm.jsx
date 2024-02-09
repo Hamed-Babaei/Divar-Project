@@ -1,5 +1,5 @@
 import React from "react";
-import { sendOtp } from "../../services/auth";
+import { sendOtp } from "services/auth";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 const SendOtpForm = ({ setStep, mobile, setMobile }) => {
