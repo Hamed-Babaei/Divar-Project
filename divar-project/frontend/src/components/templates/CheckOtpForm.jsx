@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { checkOtp } from "services/auth";
 import { getProfile } from "src/services/user";
 import { setCookie } from "src/utils/cookie";
+import styles from "./CheckOtpForm.module.css";
 
 const CheckOtpForm = ({ code, setCode, mobile, setStep }) => {
   const navigate = useNavigate();
@@ -24,7 +25,7 @@ const CheckOtpForm = ({ code, setCode, mobile, setStep }) => {
     }
   };
   return (
-    <form onSubmit={submitHandler}>
+    <form onSubmit={submitHandler} className={styles.form}>
       <p>کد تایید ارسال شد</p>
       <span>کد تایید ارسال شده به شماره {mobile} را وارد کنید</span>
       <label htmlFor="input">کد تایید را وارد کنید</label>
@@ -36,7 +37,9 @@ const CheckOtpForm = ({ code, setCode, mobile, setStep }) => {
         onChange={(e) => setCode(e.target.value)}
       />
       <button type="submit">ورود</button>
-      <button onClick={() => setStep(1)}>تغییر شماره موبایل</button>
+      <button onClick={() => setStep(1)} className={styles.backButton}>
+        تغییر شماره موبایل
+      </button>
     </form>
   );
 };

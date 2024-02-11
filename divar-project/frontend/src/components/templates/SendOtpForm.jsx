@@ -2,6 +2,7 @@ import React from "react";
 import { sendOtp } from "services/auth";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import styles from "./SendOtpForm.module.css";
 const SendOtpForm = ({ setStep, mobile, setMobile }) => {
   const submitHandler = async (e) => {
     e.preventDefault();
@@ -19,7 +20,7 @@ const SendOtpForm = ({ setStep, mobile, setMobile }) => {
   };
   return (
     <>
-      <form onSubmit={submitHandler}>
+      <form onSubmit={submitHandler} className={styles.form}>
         <p>ورود به حساب کاربری</p>
         <span>
           برای استفاده از امکانات دیوار، مطفا شماره موبایل هود را وارد کنید. کد
