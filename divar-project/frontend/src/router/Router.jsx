@@ -12,7 +12,7 @@ import Loader from "src/components/modules/Loader/Loader";
 const Router = () => {
   const { data, isLoading, error } = useQuery(["profile"], getProfile);
   if (isLoading) return <Loader />;
-  console.log(data);
+  console.log("data in Router.jsx => ", data);
   return (
     <Routes>
       <Route index element={<HomePage />} />
