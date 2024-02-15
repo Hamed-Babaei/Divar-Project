@@ -1,19 +1,21 @@
-import { useQuery, useQueryClient } from "@tanstack/react-query";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import React from "react";
-import { getCategory } from "src/services/admin";
+import { deleteCategory, getCategory } from "src/services/admin";
 import Loader from "../modules/Loader/Loader";
 
 const CategoryList = () => {
   const queryClient = useQueryClient();
-  const { data, isLoading } = useQuery(["get-categories"], getCategory, {
-    onSuccess: () => queryClient.invalidateQueries("get-categories"),
+  const { data, isLoading } = useQuery(["get-categories"], getCategory);
+  const { mutate, error } = useMutation(deleteCategory, {
+    onSuccess: () => queryClient.invalidateQueries("delete-category"),
   });
 
-  const deleteHandler = (slug) => {
-    // e.preventDefault();
-    console.log(slug);
+  const deleteHandler = (categoryID) => {
+    event.preventDefault();
+    console.log(categoryID);
+    mutate(categoryID);
   }; //   console.log("data in list => ", data.data);
-  console.log("is loading =>", isLoading);
+  console.log("data =>", data);
   return (
     <div className="">
       <h1 className="my-5">لیست کتگوری ها :</h1>
@@ -40,7 +42,7 @@ const CategoryList = () => {
                 <td className="py-2 px-4 border-b">
                   <button
                     className="bg-[#a62626] text-white border-none px-[8px] py-[5px] rounded-md text-sm cursor-pointer disabled:opacity-50 hover:opacity-85 duration-200"
-                    onClick={() => deleteHandler(item.slug)}
+                    onClick={() => deleteHandler(item._id)}
                     y
                   >
                     حذف
