@@ -1,6 +1,9 @@
 import { useQuery } from "@tanstack/react-query";
+import axios from "axios";
 import React, { useState } from "react";
+import { toast } from "react-toastify";
 import { getCategory } from "src/services/admin";
+import { getCookie } from "src/utils/cookie";
 
 const AddPost = () => {
   const [form, setForm] = useState({
@@ -26,6 +29,21 @@ const AddPost = () => {
   const addHandler = (e) => {
     e.preventDefault();
     console.log(form);
+    const formData = new FormData();
+    for (let i in form) {
+      formData.append(i, form[i]);
+    }
+    console.log(formData);
+    const token = getCookie("accessToken");
+    axios
+      .post(`${import.meta.env.VITE_BASE_URL}post/create`, formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+          Authorization: `Bearer ${token}`,
+        },
+      })
+      .then((res) => toast(res.data.message))
+      .catch((error) => toast.error(error));
   };
 
   return (
@@ -55,7 +73,7 @@ const AddPost = () => {
         قیمت
       </label>
       <input
-        type="text"
+        type="number"
         name="amount"
         id="amount"
         className="block w-[300px] p-[5px] border border-solid border-gray-200 rounded-md mb-8"
@@ -70,7 +88,7 @@ const AddPost = () => {
         className="block w-[300px] p-[5px] border border-solid border-gray-200 rounded-md mb-8"
       />
       <label htmlFor="category" className="block text-base mb-3">
-        دسته بندی :{" "}
+        دسته بندی :
       </label>
       <select
         name="category"

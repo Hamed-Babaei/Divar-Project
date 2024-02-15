@@ -5,6 +5,7 @@ import { BrowserRouter } from "react-router-dom";
 import Router from "router/Router";
 import Layout from "./layouts/layout";
 const queryClient = new QueryClient({ defaultOptions });
+import { ToastContainer } from "react-toastify";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <BrowserRouter>
           <Layout>
             <Router />
+            <ToastContainer />
           </Layout>
         </BrowserRouter>
         <ReactQueryDevtools />
