@@ -1,5 +1,6 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import React, { useState } from "react";
+import toast from "react-hot-toast";
 import { addCategory } from "src/services/admin";
 
 const CategoryForm = () => {
@@ -24,7 +25,9 @@ const CategoryForm = () => {
     if (!form.name || !form.slug || !form.icon) {
       return;
     }
+
     mutate(form);
+    toast.success("دسته بندی با موفقیت اضافه شد");
     console.log("form =>", form);
   };
   return (
@@ -32,11 +35,6 @@ const CategoryForm = () => {
       <h3 className="mb-8 border-b-[3px] border-solid w-fit pb-[5px] border-[#a62626]">
         دسته بندی جدید
       </h3>
-      {data?.status === 201 && (
-        <p className="bg-[#a62626] mb-5 text-white p-[5px] text-center rounded">
-          دسته بندی با موفقیت اضافه شد
-        </p>
-      )}
       {!!error && (
         <p className="bg-[#a62626] mb-5 text-white p-[5px] text-center rounded">
           مشکلی پیش آمده است!

@@ -5,6 +5,7 @@ import { checkOtp } from "services/auth";
 import { getProfile } from "src/services/user";
 import { setCookie } from "src/utils/cookie";
 import styles from "./CheckOtpForm.module.css";
+import toast from "react-hot-toast";
 
 const CheckOtpForm = ({ code, setCode, mobile, setStep }) => {
   const navigate = useNavigate();
@@ -16,6 +17,7 @@ const CheckOtpForm = ({ code, setCode, mobile, setStep }) => {
     const { response, error } = await checkOtp(mobile, code);
 
     if (response) {
+      toast.success("ورود با موفقیت انجام شد");
       setCookie(response.data);
       navigate("/");
       refetch();

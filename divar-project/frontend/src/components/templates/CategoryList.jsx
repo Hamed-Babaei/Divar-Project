@@ -2,6 +2,7 @@ import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import React from "react";
 import { deleteCategory, getCategory } from "src/services/admin";
 import Loader from "../modules/Loader/Loader";
+import toast from "react-hot-toast";
 
 const CategoryList = () => {
   const queryClient = useQueryClient();
@@ -14,6 +15,10 @@ const CategoryList = () => {
     event.preventDefault();
     console.log(categoryID);
     mutate(categoryID);
+    toast.success("دسته بندی با موفقیت حذف شد");
+    if (error) {
+      toast.error("مشکلی پیش آمده!", error);
+    }
   }; //   console.log("data in list => ", data.data);
   console.log("data =>", data);
   return (
