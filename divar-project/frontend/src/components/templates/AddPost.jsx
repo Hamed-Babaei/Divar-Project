@@ -1,7 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import React, { useState } from "react";
-import { toast } from "react-toastify";
+import toast from "react-hot-toast";
+
 import { getCategory } from "src/services/admin";
 import { getCookie } from "src/utils/cookie";
 
@@ -42,8 +43,8 @@ const AddPost = () => {
           Authorization: `Bearer ${token}`,
         },
       })
-      .then((res) => toast(res.data.message))
-      .catch((error) => toast.error(error));
+      .then((res) => toast.success(res.data.message))
+      .catch((error) => toast.error("مشکلی پیش آمده است", error));
   };
 
   return (

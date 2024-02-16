@@ -5,7 +5,8 @@ import { BrowserRouter } from "react-router-dom";
 import Router from "router/Router";
 import Layout from "./layouts/layout";
 const queryClient = new QueryClient({ defaultOptions });
-import { ToastContainer } from "react-toastify";
+
+import { Toaster } from "react-hot-toast";
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
         <BrowserRouter>
           <Layout>
             <Router />
-            <ToastContainer />
+            <Toaster />
           </Layout>
         </BrowserRouter>
         <ReactQueryDevtools />
